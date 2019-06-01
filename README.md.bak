@@ -1,0 +1,5 @@
+
+To launch code open project in the Intellij Idea.
+Additional libraries needed for project:
+org.junit
+org.openqa
