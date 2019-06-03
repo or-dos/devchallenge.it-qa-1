@@ -1,5 +1,4 @@
 package org.test;
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -8,8 +7,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-
-import java.util.List;
 
 /**
  * Created by Billy_the_frog on 28.05.2019.
@@ -25,7 +22,6 @@ public class First {
     }
 
     @Test
-
     public void newHotelPageDisplayed() //Verify that Register new Hotel page is displayed when user selects Article-&gt;New-&gt;Hotel
     {
         driver.get("http://localhost:8080/article/faces/welcome.xhtml");
@@ -41,7 +37,6 @@ public class First {
     }
 
     @Test
-
     public void dataSectionOnRegisterNewHotel() //Verify that Data section is displayed on Register new Hotel
     {
         driver.get("http://localhost:8080/article/faces/hotel.xhtml");
@@ -61,7 +56,6 @@ public class First {
         driver.get("http://localhost:8080/article/faces/hotel.xhtml");
         Assert.assertTrue("No Name field!!!", !driver.findElements(By.id("add_hotel:name")).isEmpty());
     }
-
 
     @Test
     public void nameFieldAsterisk() //Verify that Name field is marked with asterisk
@@ -172,7 +166,6 @@ public class First {
         Assert.assertEquals(titleExp, title);
     }
 
-
     @Test
     public void globalRatingFieldDisplayed() //Verify that Global Rating field is displayed in Data section of Register new Hotel page
     {
@@ -199,9 +192,7 @@ public class First {
         cursor.click(rate5).build().perform();
         WebElement rate = driver.findElementByXPath("//*[@id=\"add_hotel:rate\"]/div[1]");
         cursor.click(rate).build().perform();
-
     }
-
 
     @Test
     public void globalRatingPossibleToSaveEmpty() // Verify that it is possible to save the Global Rating field
@@ -239,7 +230,6 @@ public class First {
         System.out.println(title);
         Assert.assertEquals(titleExp, title);
     }
-
 
     @Test
     public void globalRatingPossibleToSave4() // Verify that it is possible to save valid Global Rating field
@@ -302,6 +292,7 @@ public class First {
         System.out.println(asterisk);
         Assert.assertEquals(ast, asterisk);
     }
+
     @Test
     public void dateOfConstFieldIsEditable() //Verify that Date of Construction is editable
     {
@@ -312,7 +303,6 @@ public class First {
         cursor.click(nameField).build().perform();
         cursor.sendKeys("23562346").build().perform();
     }
-
 
     @Test
     public void dateOfConstFieldIsAllowDateFormat() //Verify Date of Construction field allows to input in date format
@@ -360,8 +350,6 @@ public class First {
         cursor.click(saveButt).build().perform();
         Assert.assertTrue(!driver.findElements(By.id("add_hotel:j_idt47")).isEmpty());
     }
-
-
 
     @Test
     public void dateOfConstNotSaveEmpty() //Verify that it is not possible to save the empty Date of Construction field and a meaningful error message is displayedVerify that it is not possible to save incorrect date format value Date of Construction field and a meaningful error message is displayed
@@ -439,13 +427,11 @@ public class First {
     }
 
     @Test
-
     public void countryDropDownDisplayed() //Verify that Country field is displayed in Data section of Register new Hotel page
     {
         driver.get("http://localhost:8080/article/faces/hotel.xhtml");
         Assert.assertTrue("No Country menu!!!", !driver.findElements(By.id("add_hotel:country")).isEmpty());
     }
-
 
     @Test
     public void countryMenuAsterisk() //Verify that Country fields is marked with asterisk
@@ -495,7 +481,6 @@ public class First {
         Assert.assertTrue(!driver.findElements(By.id("add_hotel:j_idt51")).isEmpty());
     }
 
-
     @Test
     public void saveValidCountry() //Verify that it is possible to save the valid Country field
     {
@@ -536,7 +521,6 @@ public class First {
     }
 
     @Test
-
     public void cityDropDownDisplayed() //Verify that City field is displayed in Data section of Register new Hotel page
     {
         driver.get("http://localhost:8080/article/faces/hotel.xhtml");
@@ -565,7 +549,6 @@ public class First {
         WebElement triggerCity = driver.findElementByXPath("//*[@id=\"add_hotel:city\"]/div[3]/span");
         cursor.click(triggerCity).build().perform();
         cursor.sendKeys("l").build().perform();
-
     }
 
     @Test
@@ -646,7 +629,6 @@ public class First {
         Assert.assertTrue("No Short Description!!!", !driver.findElements(By.id("add_hotel:short_description")).isEmpty());
     }
 
-
     @Test
     public void shortDescrFieldAsterisk() //Verify that Short Description field is marked with asterisk
     {
@@ -668,9 +650,6 @@ public class First {
         cursor.sendKeys("Very good hotel 666.").build().perform();
     }
 
-
-
-
     @Test
     public void shortDescrIsAllowsAlfaNumeric() //Verify that Short Description field allows to input alphanumeric characters
     {
@@ -683,9 +662,7 @@ public class First {
         cursor.sendKeys("Aqsd 0987654321").build().perform();
         cursor.click(saveButt).build().perform();
         Assert.assertTrue(!driver.findElements(By.id("add_hotel:j_idt57")).isEmpty());
-
     }
-
 
     @Test
     public void shortDescrNotSaveEmpty() //Verify that it is not possible to save the empty Short Description field and a meaningful error message is displayed
@@ -740,14 +717,12 @@ public class First {
         Assert.assertEquals(titleExp, title);
     }
 
-
     @Test
     public void descrIsDisplayed() //Verify that Description field is displayed in Data section of Register new Hotel
     {
         driver.get("http://localhost:8080/article/faces/hotel.xhtml");
         Assert.assertTrue("No Description!!!", !driver.findElements(By.id("add_hotel:description")).isEmpty());
     }
-
 
     @Test
     public void descrFieldAsterisk() //Verify that Description field is marked with asterisk
@@ -783,7 +758,6 @@ public class First {
         cursor.click(saveButt).build().perform();
         Assert.assertTrue(!driver.findElements(By.id("add_hotel:j_idt59")).isEmpty());
     }
-
 
     @Test
     public void descrNotSaveEmpty() //Verify that it is not possible to save the empty Description field and a meaningful error message is displayed
@@ -838,7 +812,6 @@ public class First {
         Assert.assertEquals(titleExp, title);
     }
 
-
     @Test
     public void notesIsDisplayed() //Verify that Notes field is displayed in Data section of Register new Hotel
     {
@@ -856,7 +829,6 @@ public class First {
         cursor.click(nameField).build().perform();
         cursor.sendKeys("Not Very good hotel 666.").build().perform();
     }
-
 
     @Test
     public void notesSaveEmptyField() // Verify that it is possible to save the empty Notes field
@@ -896,7 +868,6 @@ public class First {
         System.out.println(title);
         Assert.assertEquals(titleExp, title);
     }
-
 
     @Test
     public void notesSaveFilledField() // Verify that it is possible to save the filled Notes field
@@ -940,7 +911,7 @@ public class First {
     @After
     public void end()
         {
-        //driver.quit();
+        driver.quit();
     }
 }
 
