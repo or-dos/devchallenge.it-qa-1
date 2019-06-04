@@ -8,16 +8,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-/**
- * Created by Billy_the_frog on 28.05.2019.
- */
 public class First {
     public ChromeDriver driver;
 
     @Before
     public void run()
     {
-        System.setProperty("webdriver.chrome.driver", "e:\\chromedriver32.exe");
+        System.setProperty("webdriver.chrome.driver", "/opt/chromedriver");
         driver = new ChromeDriver();
     }
 
